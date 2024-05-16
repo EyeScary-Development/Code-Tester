@@ -58,7 +58,6 @@ function initialise(string) {
   console.log("success! Changing ace instance theme");
   editor.setTheme("ace/theme/" + string);
   console.log("success!");
-  openTab("null", "Tab1");
 }
 
 function openTab(evt, tabName) {
