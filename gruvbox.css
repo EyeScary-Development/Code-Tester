@@ -1,26 +1,31 @@
-#editor { 
-    position: absolute;
+#editor {
+    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
 }
-body{
-    background-color: #3C3836;
-    color: #EBDAB4;
+#editor-container {
+    width: 95%;
+    height: 95%;
+}
+body {
+    background-color: #3c3836;
+    color: #ebdab4;
 }
 .tabcontent {
     display: none;
     padding: 20px;
-  }
+}
 .tab button {
     background-color: #f1f1f1;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
+}
+
 .tab button:hover {
     background-color: #ddd;
-  }
-  
+}
