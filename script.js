@@ -1,3 +1,4 @@
+let editor = ...
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
@@ -45,7 +46,7 @@ function changelang() {
 }
 
 function initialise(string) {
-  var editor=ace.edit("editor")
+  editor=ace.edit("editor")
   console.log("ace is: "+editor);
   console.log("changing css..");
   document.getElementById("theme").href = string + ".css";
