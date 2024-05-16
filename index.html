@@ -5,17 +5,17 @@
 </head>
 <body>
     <div class="tab">
-        <button class="tablinks" onclick="openTab('Tab1')">
+        <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Tab1')">
             Editor
         </button>
-        <button class="tablinks" onclick="openTab('Tab2')">
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">
             Marketplace
         </button>
-        <button class="tablinks" onclick="openTab('Tab3')">
+        <button class="tablinks" onclick="openTab(event, 'Tab3')">
             Settings
         </button>
     </div>
-    <div id="Tab1" class="tab">
+    <div id="Tab1" class="tabcontent">
         <body>
             <div class="editor-container">
                 <div id="editor"></div>
@@ -23,11 +23,11 @@
         </body>
     </div>
 
-    <div id="Tab2" class="tab">
+    <div id="Tab2" class="tabcontent">
         <h3>No Market here for now</h3>
     </div>
 
-    <div id="Tab3" class="tab">
+    <div id="Tab3" class="tabcontent">
         <h3>Settings</h3>
         <select onchange="themechange(this.value)">
             <option value="gruvbox">Gruvbox</option>
