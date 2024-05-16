@@ -3,7 +3,7 @@ var editor = "placeholder";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
-  openTab(Tab1)
+  openTab('Tab1')
 });
 
 function setCookie(cname, cvalue, exdays) {
