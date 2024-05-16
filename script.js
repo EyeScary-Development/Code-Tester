@@ -3,7 +3,7 @@ var editor = "placeholder";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
-  openTab('Tab1')
+  document.getElementById("defaultOpen").click();
 });
 
 function setCookie(cname, cvalue, exdays) {
@@ -61,11 +61,18 @@ function initialise(string) {
   console.log("success!");
 }
 
-function openTab(tabName) {
-  const tabs = document.getElementsByClassName('tab');
-  for (let tab of tabs) {
-    tab.style.display = 'block';
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-  document.getElementById(tabName).style.display = 'none';
-    
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
+
+document.getElementById("defaultOpen").click();
