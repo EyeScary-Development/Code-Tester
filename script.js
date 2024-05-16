@@ -1,4 +1,4 @@
-let editor = ...
+let editor = ""
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
