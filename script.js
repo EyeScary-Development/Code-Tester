@@ -50,7 +50,7 @@ function changelang() {
 }
 
 function initialise(string) {
-  var editor = ace.edit("editor");
+  editor = ace.edit("editor");
   console.log("changing css..");
   document.getElementById("theme").href = string + ".css";
   console.log("success! Changing ace instance theme");
