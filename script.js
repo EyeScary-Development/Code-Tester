@@ -62,6 +62,10 @@ function initialise(string) {
 }
 
 function openTab(tabName) {
-  document.getElementsByClassName("tabcontent").style.display = "block";
-  document.getElementById(tabName).style.display = "none";
+  const tabs = document.getElementsByClassName('tab');
+  for (let tab of tabs) {
+    tab.style.display = 'block';
+  }
+  document.getElementById(tabName).style.display = 'none';
+    
 }
