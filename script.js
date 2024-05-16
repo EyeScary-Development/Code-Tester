@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
-  changelang(editor);
+  changelang();
   document.getElementById("defaultOpen").click();
 });
 
@@ -31,11 +31,15 @@ function themechange(string) {
   console.log("setting theme cookie...");
   setCookie("theme", string, 365);
   console.log("success!");
-  document.getElementById("defaultOpen").click();
-  initialise(string);
+  if(confirm("editor will restart and any unsaved progress possibly lost, continue?")){
+      document.getElementById("defaultOpen").click();
+      initialise(string);
+  } else{
+    alert("next time you reload CSCode, the changes will apply");
+  }
 }
 
-function changelang(editor) {
+function changelang() {
   var usin = prompt("what language would you like to use?");
   editor.session.setMode("ace/mode/" + usin);
 }
