@@ -2,6 +2,7 @@ var editor = "placeholder";
 
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
+  changelang();
 });
 
 function setCookie(cname, cvalue, exdays) {
@@ -56,7 +57,6 @@ function initialise(string) {
   console.log("success! Changing ace instance theme");
   editor.setTheme("ace/theme/" + string);
   console.log("success!");
-  changelang();
   openTab("null", "Tab1");
 }
 
