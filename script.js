@@ -38,7 +38,6 @@ function themechange(string) {
     )
   ) {
     editor = "";
-    openTab("null", "Tab1");
     initialise(string);
   } else {
     alert("Next time you reload CSCode, your changes will be applied");
