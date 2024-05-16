@@ -1,4 +1,4 @@
-var editor = "placeholder";
+var editor = ace.edit("editor");
 
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
