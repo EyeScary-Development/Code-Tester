@@ -1,8 +1,6 @@
-window.editor = ace.edit("editor");
-
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
-  changelang();
+  changelang(editor);
   document.getElementById("defaultOpen").click();
 });
 
@@ -33,17 +31,18 @@ function themechange(string) {
   console.log("setting theme cookie...");
   setCookie("theme", string, 365);
   console.log("success!");
-  initialise(string);
   document.getElementById("defaultOpen").click();
+  initialise(string);
 }
 
-function changelang() {
+function changelang(editor) {
   var usin = prompt("what language would you like to use?");
-  window.editor.session.setMode("ace/mode/" + usin);
+  editor.session.setMode("ace/mode/" + usin);
 }
 
 function initialise(string) {
-  console.log("ace is: "+window.editor);
+  var editor=ace.edit("editor")
+  console.log("ace is: "+editor);
   console.log("changing css..");
   document.getElementById("theme").href = string + ".css";
   console.log("success! Changing ace instance theme");
