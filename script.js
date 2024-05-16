@@ -37,7 +37,7 @@ function themechange(string) {
       "Editor will be restarted, are you ok with that? (make sure you save your work)",
     )
   ) {
-    editor = "";
+    var editor = "";
     initialise(string);
   } else {
     alert("Next time you reload CSCode, your changes will be applied");
@@ -50,7 +50,9 @@ function changelang() {
 }
 
 function initialise(string) {
-  editor = ace.edit("editor");
+  console.log("starting Ace..");
+  var editor = ace.edit("editor");
+  console.log("ace now: "+editor);
   console.log("changing css..");
   document.getElementById("theme").href = string + ".css";
   console.log("success! Changing ace instance theme");
