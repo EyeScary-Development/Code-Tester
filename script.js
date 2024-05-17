@@ -42,7 +42,7 @@ function themechange(string) {
 
 function changelang() {
   var usin = prompt("what language would you like to use?");
-  editor.session.setMode("ace/mode/" + usin);
+  editor.session.setMode("ace/mode/" + usin.toLowerCase());
 }
 
 function initialise(string) {
