@@ -77,7 +77,7 @@ function openTab(evt, tabName) {
 }
 
 function dl(){
-  const data = edit.getValue();
+  const data = editor.getValue();
   const blob = new Blob([data], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   downloadURI(url, prompt("save the file as? [include extension]"));
