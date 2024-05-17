@@ -77,7 +77,7 @@ function openTab(evt, tabName) {
 }
 
 function dl(){
-  const data = document.getElementById("editor").innerHTML;
+  const data = editor.getValue();
   console.log(data)
 }
 
