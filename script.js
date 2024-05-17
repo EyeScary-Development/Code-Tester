@@ -32,7 +32,7 @@ function themechange(string) {
   console.log("setting theme cookie...");
   setCookie("theme", string, 365);
   console.log("success!");
-  if (confirm("change theme to " + string)) {
+  if (confirm("change theme to " + string + "?")) {
     document.getElementById("defaultOpen").click();
     initialise(string);
   } else {
