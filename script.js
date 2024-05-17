@@ -79,6 +79,16 @@ function openTab(evt, tabName) {
 function dl(){
   const data = editor.getValue();
   console.log(data)
+  downloadURI(data, prompt("save the file as? [include extension]")
 }
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name; // <- name instead of 'name'
+  link.href = uri;
+  link.click();
+  link.remove();
+}
+
+downloadURI('https://example.com/myfile.pdf', 'customefilename.pdf');
 
 document.getElementById("defaultOpen").click();
