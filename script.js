@@ -76,4 +76,17 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+function dl(){
+  console.log("dlSave requested");
+  let textFile = null;
+  const makeTextFile = (text) => {
+    const data = new Blob ([text], { type: 'text/plain', });
+    if (textFile !== null) {
+      window.URL.revokeObjectURL (textFile);
+    }
+    textFile = window.URL.createObjectURL (data);
+    return textFile;
+  }
+}
+
 document.getElementById("defaultOpen").click();
