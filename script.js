@@ -89,6 +89,4 @@ function downloadURI(uri, name) {
   link.remove();
 }
 
-downloadURI('https://example.com/myfile.pdf', 'customefilename.pdf');
-
 document.getElementById("defaultOpen").click();
