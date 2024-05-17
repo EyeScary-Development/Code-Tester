@@ -47,11 +47,19 @@ function changelang() {
 
 function initialise(string) {
   editor = ace.edit("editor");
-  console.log("changing css..");
-  document.getElementById("theme").href = string + ".css";
-  console.log("success! Changing ace instance theme");
-  editor.setTheme("ace/theme/" + string);
-  console.log("success!");
+  if (string == "" || string == "default"){
+    console.log("changing css..");
+    document.getElementById("theme").href = "default.css";
+    console.log("success! Changing ace instance theme");
+    editor.setTheme("ace/theme/textmate");
+    console.log("success!");
+  } else{
+    console.log("changing css..");
+    document.getElementById("theme").href = string + ".css";
+    console.log("success! Changing ace instance theme");
+    editor.setTheme("ace/theme/" + string);
+    console.log("success!");
+  }
 }
 
 function openTab(evt, tabName) {
