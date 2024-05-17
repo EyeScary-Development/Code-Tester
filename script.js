@@ -100,9 +100,8 @@ function up(){
     reader.readAsText(file, 'UTF-8');
     reader.onload = (readerEvent) => {
       var content = readerEvent.target.result;
-      var data = JSON.parse(content);
-      console.log(data);
-      editor.setValue(data);
+      console.log(content);
+      editor.setValue(content);
     }
   }
 
@@ -110,7 +109,7 @@ function up(){
       input.click();
       console.log("load success!");
   } catch(error) {
-      console.log("fuck you :D " + error);
+      console.log("error: " + error);
   }
 
 }
