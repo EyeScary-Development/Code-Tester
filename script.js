@@ -1,4 +1,5 @@
 let editor = "";
+let openedornot=0;
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
@@ -80,7 +81,11 @@ function dl(){
   const data = editor.getValue();
   const blob = new Blob([data], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
-  downloadURI(url, prompt("save the file as? [include extension]"));
+  if (openedornot == 0){
+    downloadURI(url, prompt("save the file as? [include extension]"));
+  } else {
+    downloadURI(url, getCookie("filepath"));
+  }
 }
 function downloadURI(uri, name) {
   var link = document.createElement("a");
@@ -103,6 +108,8 @@ function up(){
       console.log(content);
       editor.setValue(content);
     }
+  setCookie("filepath", input, 1)
+  openedornot=1;
   }
 
   try {
