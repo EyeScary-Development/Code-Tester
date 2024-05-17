@@ -78,7 +78,7 @@ function openTab(evt, tabName) {
 
 function dl(){
   localStorage.setItem("temp", editor.getValue());
-  const data = localStorage.getItem("tempxml")
+  const data = localStorage.getItem("temp")
   downloadURI(data, prompt("save the file as? [include extension]"));                        
 }
 function downloadURI(uri, name) {
