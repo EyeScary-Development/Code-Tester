@@ -77,10 +77,9 @@ function openTab(evt, tabName) {
 }
 
 function dl(){
-  const data = editor.getValue();
-  setCookie("filecontent", data, 1)
-  console.log(getCookie("filecontent"));
-  downloadURI(getCookie("filecontent"), prompt("save the file as? [include extension]"));
+  localStorage.setItem("temp", editor.getValue());
+  const data = localStorage.getItem("tempxml")
+  downloadURI(data, prompt("save the file as? [include extension]"));                        
 }
 function downloadURI(uri, name) {
   var link = document.createElement("a");
