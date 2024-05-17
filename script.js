@@ -90,4 +90,28 @@ function downloadURI(uri, name) {
   link.remove();
 }
 
+function up(){
+  console.log("upSave requested");
+  var input = document.createElement('input');
+  input.type = 'file';
+  input.onchange = (e) => {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.readAsText(file, 'UTF-8');
+    reader.onload = (readerEvent) => {
+      var content = readerEvent.target.result;
+      var data = JSON.parse(content);
+      console.log(data);
+      editor.setValue(data);
+    }
+  }
+
+  try {
+      input.click();
+      console.log("load success!");
+  } catch(error) {
+      console.log("fuck you :D " + error);
+  }
+
+}
 document.getElementById("defaultOpen").click();
