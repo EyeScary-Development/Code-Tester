@@ -78,8 +78,8 @@ function openTab(evt, tabName) {
 
 function dl(){
   const data = editor.getValue();
-  console.log(data)
-  downloadURI(data, prompt("save the file as? [include extension]")
+  console.log(data);
+  downloadURI(data, prompt("save the file as? [include extension]"));
 }
 function downloadURI(uri, name) {
   var link = document.createElement("a");
