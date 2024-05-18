@@ -16,7 +16,7 @@
     font-size: 14px;
 }
 body {
-    background-color: #3c3836;
+    background-color: #1D2021;
     color: #ebdab4;
 }
 .tabcontent {
@@ -24,12 +24,25 @@ body {
     padding: 20px;
 }
 .tab button {
-    background-color: #f1f1f1;
+    background-color: #1D2021;
+    color:#ebdab4;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: #3C3836;
+}
+
+button {
+    background-color: #1D2021;
+    color:#ebdab4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3C3836;
 }
