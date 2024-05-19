@@ -71,7 +71,11 @@ function initialise(string) {
     editor.setTheme("ace/theme/" + string);
     console.log("success!");
   }
-  linewraptoggle()
+  if (getCookie("linewrapping")==false){
+    editor.session.setUseWrapMode(false);
+  } else if (getCookie("linewrapping")==true) {
+    editor.session.setUseWrapMode(true);
+  }
 }
 
 function openTab(evt, tabName) {
