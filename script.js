@@ -46,12 +46,12 @@ function changelang() {
 }
 
 function linewraptoggle(){
-  if (getCookie("linewrapping")==false){
+  if (getCookie("linewrapping")=="false" || getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(true);
-    setCookie("linewrapping", true, 365);
-  } else if (getCookie("linewrapping")==true) {
+    setCookie("linewrapping", "true", 365);
+  } else if (getCookie("linewrapping")=="true") {
     editor.session.setUseWrapMode(false);
-    setCookie("linewrapping", false, 365);
+    setCookie("linewrapping", "false", 365);
   }
   console.log(getCookie("linewrapping"))
 }
@@ -71,9 +71,9 @@ function initialise(string) {
     editor.setTheme("ace/theme/" + string);
     console.log("success!");
   }
-  if (getCookie("linewrapping")==false||getCookie("linewrapping")==""){
+  if (getCookie("linewrapping")=="false"||getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(false);
-  } else if (getCookie("linewrapping")==true) {
+  } else if (getCookie("linewrapping")=="true") {
     editor.session.setUseWrapMode(true);
   }
   console.log(getCookie("linewrapping"))
