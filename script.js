@@ -49,13 +49,11 @@ function linewraptoggle(){
   if (getCookie("linewrapping")==false){
     editor.session.setUseWrapMode(true);
     setCookie("linewrapping", true, 365);
-    console.log(getCookie("linewrapping"));
-  } else {
+  } else if (getCookie("linewrapping")==true) {
     editor.session.setUseWrapMode(false);
     setCookie("linewrapping", false, 365);
-    console.log(getCookie("linewrapping"));
-
   }
+  console.log(getCookie("linewrapping"));
 }
 
 function initialise(string) {
