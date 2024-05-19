@@ -71,7 +71,7 @@ function initialise(string) {
     editor.setTheme("ace/theme/" + string);
     console.log("success!");
   }
-  if (getCookie("linewrapping")==false||getCookie("linewrapping")==false){
+  if (getCookie("linewrapping")==false||getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(false);
   } else if (getCookie("linewrapping")==true) {
     editor.session.setUseWrapMode(true);
