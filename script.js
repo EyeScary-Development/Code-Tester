@@ -45,6 +45,15 @@ function changelang() {
   editor.session.setMode("ace/mode/" + usin.toLowerCase());
 }
 
+function tabchanger(){
+  var usin = parseInt(prompt("change tab size to:"))
+  if (usin){
+      editor.session.setOptions({ tabSize: usin, useSoftTabs: true });
+      setCookie("tabsize", usin, 365);
+  }
+  console.log(getCookie("tabsize"))
+}
+
 function linewraptoggle(){
   if (getCookie("linewrapping")=="false" || getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(true);
@@ -77,6 +86,8 @@ function initialise(string) {
     editor.session.setUseWrapMode(true);
   }
   console.log(getCookie("linewrapping"))
+  editor.session.setOptions({ tabSize: getCookie("tabsize"), useSoftTabs: true });
+
 }
 
 function openTab(evt, tabName) {
