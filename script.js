@@ -46,7 +46,7 @@ function changelang() {
 }
 
 function linewraptoggle(){
-  if (getCookie("linewrapping")==false){
+  if (getCookie("linewrapping")==false || getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(true);
     setCookie("linewrapping", true, 365);
   } else if (getCookie("linewrapping")==true) {
@@ -71,11 +71,12 @@ function initialise(string) {
     editor.setTheme("ace/theme/" + string);
     console.log("success!");
   }
-  if (getCookie("linewrapping")==false){
+  if (getCookie("linewrapping")==false||getCookie("linewrapping")==false){
     editor.session.setUseWrapMode(false);
   } else if (getCookie("linewrapping")==true) {
     editor.session.setUseWrapMode(true);
   }
+  console.log(getCookie("linewrapping"))
 }
 
 function openTab(evt, tabName) {
