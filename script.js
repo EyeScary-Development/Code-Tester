@@ -49,9 +49,12 @@ function linewraptoggle(){
   if (getCookie("linewrapping")==false){
     editor.session.setUseWrapMode(true);
     setCookie("linewrapping", true, 365);
+    console.log(getCookie("linewrapping"));
   } else {
     editor.session.setUseWrapMode(false);
     setCookie("linewrapping", false, 365);
+    console.log(getCookie("linewrapping"));
+
   }
 }
 
