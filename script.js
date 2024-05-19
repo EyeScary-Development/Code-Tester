@@ -85,8 +85,9 @@ function initialise(string) {
   } else if (getCookie("linewrapping")=="true") {
     editor.session.setUseWrapMode(true);
   }
-  console.log(getCookie("linewrapping"))
+  console.log(getCookie("linewrapping"));
   editor.session.setOptions({ tabSize: getCookie("tabsize"), useSoftTabs: true });
+  console.log(getCookie("tabsize"));
 
 }
 
