@@ -70,6 +70,7 @@ function initialise(string) {
     editor.setTheme("ace/theme/" + string);
     console.log("success!");
   }
+  linewraptoggle()
 }
 
 function openTab(evt, tabName) {
