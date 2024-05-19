@@ -2,19 +2,20 @@
 <head>
     <title>CSCode</title>
     <link id="theme" rel="stylesheet" href="dracula.css" />
+    <link rel="icon" type="image/x-icon" href="icon.png">
+
 </head>
 <body>
+
     <div class="tab">
         <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Tab1')">
             Editor
         </button>
         <button class="tablinks" onclick="openTab(event, 'Tab2')">
-            Marketplace
-        </button>
-        <button class="tablinks" onclick="openTab(event, 'Tab3')">
             Settings
         </button>
     </div>
+
     <div id="Tab1" class="tabcontent">
         <body>
             <div class="editor-container">
@@ -26,21 +27,26 @@
     </div>
 
     <div id="Tab2" class="tabcontent">
-        <h3>No Market here for now</h3>
-    </div>
-
-    <div id="Tab3" class="tabcontent">
         <h3>Settings</h3>
         <select onchange="themechange(this.value)">
             <option value="default">Default</option>
             <option value="gruvbox">Gruvbox</option>
             <option value="dracula">Dracula</option>
         </select>
-        <br />
+        <br>
+        <br>
         <button onclick="changelang()">
             Change programming language in use
         </button>
+        <br>
+        <br>
+        <button onclick="linewraptoggle()">Toggle line wrapping</button>
+        <br>
+        <br>
+        <p>CSCode from EyeScary Development, simplifying user configuration for <a href="https://ace.c9.io">Ace code editor</a></p>
     </div>
+
     <script src="ace-builds/src-noconflict/ace.js"></script>
     <script src="script.js"></script>
+
 </body>

@@ -45,6 +45,16 @@ function changelang() {
   editor.session.setMode("ace/mode/" + usin.toLowerCase());
 }
 
+function linewraptoggle(){
+  if (getCookie("linewrapping")==false){
+    editor.session.setUseWrapMode(true);
+    setCookie("linewrapping", true, 365);
+  } else {
+    editor.session.setUseWrapMode(false);
+    setCookie("linewrapping", false, 365);
+  }
+}
+
 function initialise(string) {
   editor = ace.edit("editor");
   if (string == "" || string == "default"){
