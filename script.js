@@ -54,6 +54,19 @@ function tabchanger(){
   console.log(getCookie("tabsize"))
 }
 
+function fontchange(){
+  var font = prompt("what font do you want to use? (monospace fonts available by default in CSS only)").toLowerCase();
+  var size = prompt("What font size do you want?") + "pt";
+  setCookie("ffamily", font, 365);
+  setCookie("fsize", size, 365);
+  if (confirm("change font to " + font + "?")) {
+    document.getElementById("defaultOpen").click();
+    initialise(getCookie("theme"));
+  } else {
+    alert("next time you reload CSCode, the changes will apply");
+  }
+}
+
 function linewraptoggle(){
   if (getCookie("linewrapping")=="false" || getCookie("linewrapping")==""){
     editor.session.setUseWrapMode(true);
@@ -88,7 +101,9 @@ function initialise(string) {
   console.log(getCookie("linewrapping"));
   editor.session.setOptions({ tabSize: getCookie("tabsize"), useSoftTabs: true });
   console.log(getCookie("tabsize"));
-
+  if (getCookie("ffamily") != "" && getCookie("fsize") != ""){
+    editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize") });
+  }
 }
 
 function openTab(evt, tabName) {
