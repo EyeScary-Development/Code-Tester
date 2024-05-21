@@ -155,4 +155,3 @@ function up(){
   }
 
 }
-showSettings
