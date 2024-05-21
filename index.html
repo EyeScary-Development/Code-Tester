@@ -7,26 +7,26 @@
 </head>
 <body>
 
-    <div class="tab">
-        <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Tab1')">
+    <div id="sidebar">
+        <button id="sidebar-button" onclick="hideSettings()">
             Editor
         </button>
-        <button class="tablinks" onclick="openTab(event, 'Tab2')">
+        <p id="spacer"></p>
+        <br>
+        <button id="sidebar-button"  onclick="showSettings()">
             Settings
         </button>
     </div>
-
-    <div id="Tab1" class="tabcontent">
-        <body>
-            <div class="editor-container">
-                <div id="editor"></div>
-            </div>
-            <button onclick="dl()">Save</button>
-            <button onclick="up()">Open</button>
-        </body>
+    <div id="otherside">
+    <div id="codeeditor">
+        <div class="editor-container">
+            <div id="editor"></div>
+        </div>
+        <button onclick="dl()">Save</button>
+        <button onclick="up()">Open</button>
     </div>
 
-    <div id="Tab2" class="tabcontent">
+    <div id="settings">
         <h3>Settings</h3>
         <select onchange="themechange(this.value)">
             <option value="default">Default</option>
@@ -51,7 +51,7 @@
         <br>
         <p>CSCode from EyeScary Development, simplifying user configuration for <a href="https://ace.c9.io">Ace code editor</a></p>
     </div>
-
+    </div>
     <script src="ace-builds/src-noconflict/ace.js"></script>
     <script src="script.js"></script>
 

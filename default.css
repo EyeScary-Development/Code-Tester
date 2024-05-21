@@ -1,6 +1,6 @@
 .editor-container {
     width: 900px;
-    height: 540px;
+    height: 570px;
     margin: 20px auto;
     position: relative;
 }
@@ -20,17 +20,53 @@ body {
     color: #333;
     font-family: sans-serif;
 }
-.tabcontent {
-    display: none;
-    padding: 20px;
-}
-.tab button {
-    background-color: #f1f1f1;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+
+#sidebar{
+    background-color:#e8e8e8;
+    color:#333;
+    text-align:left;
+    float:left;
+    width:auto;
+    height:100%;
+    padding: 5px 5px;
+    text-align:center;
+    border-radius:24px;
+    -webkit-border-radius:24px;
+    -moz-border-radius:24px;
+    -ms-border-radius:24px;
+    -o-border-radius:24px;
 }
 
-.tab button:hover {
-    background-color: #ddd;
+#otherside{
+    float:center;
+    text-align:center;
+}
+
+#settings{
+    display:none;
+}
+
+#sidebar-button {
+    background-color: #e8e8e8;
+    color:#333;
+    border: none;
+    padding: 10px 5px;
+    cursor: pointer;
+    width:auto;
+    font-size:6px auto;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    border-radius:12px;
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+    -ms-border-radius:12px;
+    -o-border-radius:12px;
+}
+
+#sidebar-button:hover {
+    background-color: #f0f0f0;
+}
+#spacer{
+    padding:410% 0px;
 }

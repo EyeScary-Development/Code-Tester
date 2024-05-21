@@ -2,7 +2,6 @@ let editor = "";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
-  document.getElementById("defaultOpen").click();
 });
 
 function setCookie(cname, cvalue, exdays) {
@@ -33,7 +32,7 @@ function themechange(string) {
   setCookie("theme", string, 365);
   console.log("success!");
   if (confirm("change theme to " + string + "?")) {
-    document.getElementById("defaultOpen").click();
+    hideSettings()
     initialise(string);
   } else {
     alert("next time you reload CSCode, the changes will apply");
@@ -60,7 +59,7 @@ function fontchange(){
   setCookie("ffamily", font, 365);
   setCookie("fsize", size, 365);
   if (confirm("change font to " + font + "?")) {
-    document.getElementById("defaultOpen").click();
+    hideSettings();
     initialise(getCookie("theme"));
   } else {
     alert("next time you reload CSCode, the changes will apply");
@@ -106,25 +105,23 @@ function initialise(string) {
   }
 }
 
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+
 
 function dl(){
   const data = editor.getValue();
   const blob = new Blob([data], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   downloadURI(url, prompt("save the file as? [include extension]"));
+}
+
+function hideSettings(){
+  document.getElementById("settings").style.display = "none";
+  document.getElementById("codeeditor").style.display = "block";
+}
+
+function showSettings(){
+  document.getElementById("settings").style.display = "block";
+  document.getElementById("codeeditor").style.display = "none";
 }
 
 function downloadURI(uri, name) {
@@ -158,4 +155,4 @@ function up(){
   }
 
 }
-document.getElementById("defaultOpen").click();
+showSettings
