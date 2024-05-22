@@ -159,16 +159,16 @@ function up(){
 function savetocookie(){
   var usin = prompt("write to save No. (any number)")
   if (getCookie(usin) == "") {
-    setCookie(usin, editor.getValue(), 365);
+    localStorage.setItem(usin, editor.getValue());
   } else if (getCookie(usin)!="" && confirm("overwrite save?")) {
-    setCookie(usin, editor.getValue(), 365)
+    localStorage.setItem(usin, editor.getValue());
   }
 }
 
 function loadsave(){
   usin = prompt("load save No. (any existing save number)")
-  if(confirm("correct save?: " + getCookie(usin))){
-    editor.setValue(getCookie(usin));
+  if(confirm("correct save?: " + localStorage.getItem(usin))){
+    editor.setValue(localStorage.getItem(usin));
   } else {
     console.log("loadsave cancelled successfully")
   }
