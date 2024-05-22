@@ -155,3 +155,21 @@ function up(){
   }
 
 }
+
+function savetocookie(){
+  var usin = prompt("write to save No. (any number)")
+  if (getCookie(usin) == "") {
+    setCookie(usin, editor.getValue(), 365);
+  } else if (getCookie(usin)!="" && confirm("overwrite save?")) {
+    setCookie(usin, editor.getValue(), 365)
+  }
+}
+
+function loadsave(){
+  usin = prompt("load save No. (any existing save number)")
+  if(confirm("correct save?: " + getCookie(usin))){
+    editor.setValue(getCookie(usin));
+  } else {
+    console.log("loadsave cancelled successfully")
+  }
+}
