@@ -158,9 +158,9 @@ function up(){
 
 function savetocookie(){
   var usin = prompt("write to save No. (any number)")
-  if (getCookie(usin) == "") {
+  if (localStorage.getItem(usin) == "") {
     localStorage.setItem(usin, editor.getValue());
-  } else if (getCookie(usin)!="" && confirm("overwrite save?")) {
+  } else if (localStorage.getItem(usin) != "" && confirm("overwrite save?")) {
     localStorage.setItem(usin, editor.getValue());
   }
 }
