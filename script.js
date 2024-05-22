@@ -158,7 +158,7 @@ function up(){
 
 function savetocookie(){
   var usin = prompt("write to save name:")
-  if (localStorage.getItem(usin) == "") {
+  if (localStorage.getItem(usin) == "" || localStorage.getItem(usin) == null || localStorage.getItem(usin) == "null" {
     localStorage.setItem(usin, editor.getValue());
   } else if (localStorage.getItem(usin) != "" && confirm("overwrite save?")) {
     localStorage.setItem(usin, editor.getValue());
