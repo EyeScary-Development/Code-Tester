@@ -157,7 +157,7 @@ function up(){
 }
 
 function savetocookie(){
-  var usin = prompt("write to save No. (any number)")
+  var usin = prompt("write to save name:")
   if (localStorage.getItem(usin) == "") {
     localStorage.setItem(usin, editor.getValue());
   } else if (localStorage.getItem(usin) != "" && confirm("overwrite save?")) {
@@ -166,7 +166,7 @@ function savetocookie(){
 }
 
 function loadsave(){
-  usin = prompt("load save No. (any existing save number)")
+  usin = prompt("load save (any existing save name)")
   if(confirm("correct save?: " + localStorage.getItem(usin))){
     editor.setValue(localStorage.getItem(usin));
   } else {
