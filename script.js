@@ -160,13 +160,23 @@ function savetocookie(){
   var usin = prompt("write to save name:")
   if (localStorage.getItem(usin) == null) {
     localStorage.setItem(usin, editor.getValue());
+    if (localStorage.getItem("itemlist")==null){
+      localStorage.setItem("itemlist", "- " + usin + "\n")
+    } else {
+      let ls=localStorage.getItem("itemlist")
+      localStorage.setItem("itemlist", ls + "- " + usin + "\n")
+    }
   } else if (confirm("overwrite save?")) {
     localStorage.setItem(usin, editor.getValue());
   }
 }
 
 function loadsave(){
-  usin = prompt("load save (any existing save name)")
+  if (localStorage.getItem("itemlist")!=null){
+    usin = prompt("Here is a list of all of your saves, choose one: \n \n" + localStorage.getItem("itemlist"))
+  } else {
+    alert("Sorry, you don't have any saves yet, if this is due to a bug in an update, we apologise")
+  }
   if(confirm("correct save?: " + localStorage.getItem(usin))){
     editor.setValue(localStorage.getItem(usin));
   } else {
