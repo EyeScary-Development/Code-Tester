@@ -177,7 +177,7 @@ function loadsave(){
   } else {
     alert("Sorry, you don't have any saves yet, if this is due to a bug in an update, we apologise")
   }
-  if(confirm("correct save?: " + localStorage.getItem(usin))){
+  if(confirm("correct save?: \n \n" + localStorage.getItem(usin))){
     editor.setValue(localStorage.getItem(usin));
   } else {
     console.log("loadsave cancelled successfully")
