@@ -106,7 +106,6 @@ function initialise(string) {
 }
 
 
-
 function dl(){
   const data = editor.getValue();
   const blob = new Blob([data], { type: 'text/plain' });
@@ -183,3 +182,39 @@ function loadsave(){
     console.log("loadsave cancelled successfully")
   }
 }
+
+function findandrep(){
+  editor.find(prompt("what do you want to replace"), {
+    backwards: true,
+    wrap: false,
+    caseSensitive: false,
+    wholeWord: false,
+    regExp: false
+  });
+  editor.replaceAll(prompt("what do you want to refactor these all to?"));
+}
+
+function find(){
+  var range = editor.find(prompt("What do you want to find?"), {
+    backwards: true,
+    wrap: false,
+    caseSensitive: false,
+    wholeWord: false,
+    regExp: false
+});
+};
+
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === '.') {
+    findandrep()
+  } else if (event.ctrlKey && event.key === '/'){
+    find()
+  } else if (event.ctrlKey && event.key === 's'){
+    dl()
+  } else if (event.ctrlKey && event.key === 'i'){
+    up()
+  } else if (event.ctrlKey && event.key === ','){
+    showSettings()
+  }
+
+});
