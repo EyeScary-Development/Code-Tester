@@ -1,18 +1,17 @@
-.editor-container {
-    width: 900px;
-    height: 570px;
-    margin: 10px auto;
-    position: relative;
+.ace_editor {
+    margin: auto;
+    width: 75%;
+    height : 80%;
 }
-
+#dropdown-content{
+    display:none;
+}
 #editor {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    height: 100%;
-    width: 100%;
     font-size: 14px;
 }
 body {
@@ -24,8 +23,9 @@ button {
     background-color: #1D2021;
     color:#ebdab4;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
+    margin:3px;
 }
 
 button:hover {

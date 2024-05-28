@@ -1,4 +1,5 @@
 let editor = "";
+let lastset = "none";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   changelang();
@@ -103,8 +104,22 @@ function initialise(string) {
   if (getCookie("ffamily") != "" && getCookie("fsize") != ""){
     editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize") });
   }
-}
+  editor.setOptions({
+  maxLines: 'auto',
+  minLines: 'auto',
+  autoScrollEditorIntoView: true
+  });
+  }
 
+function dropdown(){
+    if (lastset == "block"){
+        document.getElementById("dropdown-content").style.display="none"
+        lastset = "none"
+    } else {
+        document.getElementById("dropdown-content").style.display="block"
+        lastset = "block"
+    }
+}
 
 function dl(){
   const data = editor.getValue();
@@ -215,6 +230,10 @@ document.addEventListener('keydown', function(event) {
     up()
   } else if (event.ctrlKey && event.key === ','){
     showSettings()
-  }
+  } else if (event.altKey && event.key === 's'){
+    savetocookie()
+  } else if (event.altKey && event.key === 'i'){
+    loadsave()
+  } 
 
 });

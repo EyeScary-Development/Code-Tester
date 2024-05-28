@@ -19,13 +19,14 @@
     </div>
     <div id="otherside">
     <div id="codeeditor">
-        <div class="editor-container">
-            <div id="editor"></div>
-        </div>
+        <button onclick = "dropdown()">File</button>
+        <div id="dropdown-content">
         <button onclick="dl()">Save</button>
         <button onclick="up()">Open</button>
         <button onclick="savetocookie()">Save online</button>
         <button onclick="loadsave()">Load online save</button>
+        </div>
+        <pre id="editor" style="width: 65%%; height:80%;"></pre>
     </div>
 
     <div id="settings">
@@ -52,7 +53,7 @@
         <br>
         <br>
         <p>CSCode from EyeScary Development, simplifying user configuration for <a href="https://ace.c9.io">Ace code editor</a></p>
-        <p><b>Note: we are migrating to keyboard shortcuts and soon some buttons will be removed, here are the keyboard shortcuts that will replace different things: <br><br> Ctrl + s : download the file <br> Ctrl + i : open a local file <br> Ctrl + / : find mode (find all instances of a string you type in) <br> Ctrl + . : find and replace (replace all instances of an inputted string with another one) <br> Ctrl + , : open settings (don't worry, though, the settings button will not be replaced, this is an alternative way of getting to your settings)</b></p>
+        <p><b>Note: we are migrating to keyboard shortcuts and soon some buttons will be removed, here are the keyboard shortcuts that will replace different things: <br><br> Ctrl + s : download the file <br> Ctrl + i : open a local file <br> Ctrl + / : find mode (find all instances of a string you type in) <br> Ctrl + . : find and replace (replace all instances of an inputted string with another one) <br> Ctrl + , : open settings (don't worry, though, the settings button will not be replaced, this is an alternative way of getting to your settings)<br>alt + s : save online<br>alt + i : load online save</b></p>
     </div>
     </div>
     <script src="ace-builds/src-noconflict/ace.js"></script>
