@@ -2,7 +2,7 @@ let editor = "";
 let lastset = "none";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
-  var langpar = getQueryVariable("lang");
+  var lang = getQueryVariable("lang");
   if (lang != "no"){
     editor.session.setMode("ace/mode/" + lang.toLowerCase());
   } else {
