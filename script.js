@@ -72,7 +72,7 @@ function tabchanger(){
 }
 
 function fontchange(){
-  var font = prompt("what font do you want to use? (monospace fonts available by default in CSS only)").toLowerCase();
+  var font = prompt("what font do you want to use? (monospace fonts available by default in CSS only)");
   var size = prompt("What font size do you want?") + "pt";
   var weight = prompt("what font weight do you want? (100-900)");
   setCookie("ffamily", font, 365);
