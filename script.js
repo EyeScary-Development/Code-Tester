@@ -121,7 +121,8 @@ function initialise(string) {
   editor.session.setOptions({ tabSize: getCookie("tabsize"), useSoftTabs: true });
   console.log(getCookie("tabsize"));
   if (getCookie("ffamily") != "" && getCookie("fsize") != "" && getCookie("fweight") != ""){
-    editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize"), fontWeight: getCookie("fweight") });
+    editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize")});
+    document.getElementById('editor').style.fontWeight = getCookie("fweight");
   }
   editor.setOptions({
   maxLines: 'auto',
