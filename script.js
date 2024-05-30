@@ -74,8 +74,10 @@ function tabchanger(){
 function fontchange(){
   var font = prompt("what font do you want to use? (monospace fonts available by default in CSS only)").toLowerCase();
   var size = prompt("What font size do you want?") + "pt";
+  var weight = prompt("what font weight do you want? (100-900)");
   setCookie("ffamily", font, 365);
   setCookie("fsize", size, 365);
+  setCookie("fweight", weight, 365);
   if (confirm("change font to " + font + "?")) {
     hideSettings();
     initialise(getCookie("theme"));
@@ -118,8 +120,8 @@ function initialise(string) {
   console.log(getCookie("linewrapping"));
   editor.session.setOptions({ tabSize: getCookie("tabsize"), useSoftTabs: true });
   console.log(getCookie("tabsize"));
-  if (getCookie("ffamily") != "" && getCookie("fsize") != ""){
-    editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize") });
+  if (getCookie("ffamily") != "" && getCookie("fsize") != "" && getCookie("fweight") != ""){
+    editor.setOptions({ fontFamily: getCookie("ffamily"), fontSize: getCookie("fsize"), fontWeight: getCookie("fweight") });
   }
   editor.setOptions({
   maxLines: 'auto',
