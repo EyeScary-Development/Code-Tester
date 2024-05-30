@@ -242,13 +242,13 @@ function find(){
 document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.key === '.') {
     findandrep()
-  } else if (event.ctrlKey && event.key === '/'){
+  } else if (event.ctrlKey && event.code === 'Space'){
     find()
   } else if (event.ctrlKey && event.key === 's'){
     dl()
   } else if (event.ctrlKey && event.key === 'i'){
     up()
-  } else if (event.ctrlKey && event.key === ','){
+  } else if (event.altKey && event.key === ','){
     showSettings()
   } else if (event.altKey && event.key === 's'){
     savetocookie()
