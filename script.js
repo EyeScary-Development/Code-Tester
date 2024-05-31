@@ -129,7 +129,7 @@ function initialise(string) {
   minLines: 'auto',
   autoScrollEditorIntoView: true
   });
-  }
+}
 
 function dropdown(){
     if (lastset == "block"){
@@ -240,6 +240,9 @@ function find(){
 };
 
 document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey || event.altKey) {
+    event.preventDefault();
+  }
   if (event.ctrlKey && event.key === '.') {
     findandrep()
   } else if (event.ctrlKey && event.code === 'Space'){
@@ -254,6 +257,6 @@ document.addEventListener('keydown', function(event) {
     savetocookie()
   } else if (event.altKey && event.key === 'i'){
     loadsave()
-  } 
+  }
 
 });

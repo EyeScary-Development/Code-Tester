@@ -1,22 +1,7 @@
-.ace_editor {
-    margin: auto;
-    width: 75%;
-    height : 80%;
-}
-#dropdown-content{
-    display:none;
-}
-#editor {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    font-size: 14px;
-}
 body {
     background-color: #1D2021;
     color: #ebdab4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 button {
@@ -35,49 +20,13 @@ button:hover {
 #sidebar{
     background-color:#3C3836;
     color:#ebdab4;
-    text-align:left;
-    float:left;
-    width:auto;
-    height:100%;
-    padding: 5px 5px;
-    text-align:center;
-    border-radius:24px;
-    -webkit-border-radius:24px;
-    -moz-border-radius:24px;
-    -ms-border-radius:24px;
-    -o-border-radius:24px;
-}
-
-#otherside{
-    float:center;
-    text-align:center;
-}
-
-#settings{
-    display:none;
 }
 
 #sidebar-button {
     background-color: #3C3836;
     color:#ebdab4;
-    border: none;
-    padding: 10px 5px;
-    cursor: pointer;
-    width:auto;
-    font-size:6px auto;
-    text-align: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    border-radius:12px;
-    -webkit-border-radius:12px;
-    -moz-border-radius:12px;
-    -ms-border-radius:12px;
-    -o-border-radius:12px;
 }
 
 #sidebar-button:hover {
     background-color: #1D2021;
-}
-#spacer{
-    padding:370% 0px;
 }
