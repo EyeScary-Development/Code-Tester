@@ -253,10 +253,10 @@ function find(){
 };
 
 document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey || event.altKey) {
+  if ((event.ctrlKey || event.altKey) && event.key === 'c' || event.key === 'v' || event.key === 'x') {
     event.preventDefault();
   }
-  if (event.ctrlKey && event.key === '.') {
+  else if (event.ctrlKey && event.key === '.') {
     findandrep()
   } else if (event.ctrlKey && event.code === 'Space'){
     find()
@@ -274,7 +274,6 @@ document.addEventListener('keydown', function(event) {
     localStorage.setItem("torun", editor.getValue())
     showpreview(lang+".html")
   } 
-
 });
 
 function tester(){
