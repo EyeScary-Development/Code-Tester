@@ -253,7 +253,7 @@ function find(){
 };
 
 document.addEventListener('keydown', function(event) {
-  if ((event.ctrlKey || event.altKey) && event.key !== 'F5'){
+  if ((event.ctrlKey || event.altKey) && event.key !== 'F5', event.key !== 'c', event.key !== 'v', event.key !== 'x'){
     event.preventDefault();
   }
   if (event.ctrlKey && event.key === '.') {
