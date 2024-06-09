@@ -254,34 +254,42 @@ function find(){
 
 document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.key === '.') {
-    findandrep()
+    event.preventDefault();
+    findandrep();
   } else if (event.ctrlKey && event.code === 'Space'){
-    find()
+    event.preventDefault();
+    find();
   } else if (event.ctrlKey && event.key === 's'){
-    dl()
+    event.preventDefault();
+    dl();
   } else if (event.ctrlKey && event.key === 'i'){
-    up()
+    event.preventDefault();
+    up();
   } else if (event.altKey && event.key === ','){
-    showSettings()
+    event.preventDefault();
+    showSettings();
   } else if (event.altKey && event.key === 's'){
-    savetocookie()
+    event.preventDefault();
+    savetocookie();
   } else if (event.altKey && event.key === 'i'){
-    loadsave()
+    event.preventDefault();
+    loadsave();
   } else if (event.ctrlKey && event.key === 'r'){
-    localStorage.setItem("torun", editor.getValue())
-    showpreview(lang+".html")
+    event.preventDefault();
+    localStorage.setItem("torun", editor.getValue());
+    showpreview(lang+".html");
   } 
 });
 
 function tester(){
   if (lang.toLowerCase()=="javascript"){
-    localStorage.setItem("torun", editor.getValue())
-    showpreview("js.html")
+    localStorage.setItem("torun", editor.getValue());
+    showpreview("js.html");
   } else if (lang.toLowerCase()=="css"){
-    localStorage.setItem("torun", editor.getValue())
-    showpreview("css.html")
+    localStorage.setItem("torun", editor.getValue());
+    showpreview("css.html");
   } else if (lang.toLowerCase()=="html"){
-    localStorage.setItem("torun", editor.getValue())
-    showpreview("html.html")
+    localStorage.setItem("torun", editor.getValue());
+    showpreview("html.html");
   }
 }
