@@ -18,10 +18,13 @@
 }
 
 #sidebar {
-    text-align:left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align:center;
     float:left;
-    width:auto;
-    height:100%;
+    width:7%;
+    height:96.5vh;
     padding: 5px 5px;
     text-align:center;
     border-radius:24px;

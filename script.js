@@ -1,5 +1,6 @@
 let editor = "";
 let lastset = "none";
+let lang="";
 document.addEventListener("DOMContentLoaded", function () {
   initialise(getCookie("theme"));
   var lang = getQueryVariable("lang");
@@ -58,8 +59,8 @@ function themechange(string) {
 }
 
 function changelang() {
-  var usin = prompt("what language would you like to use?");
-  editor.session.setMode("ace/mode/" + usin.toLowerCase());
+  lang = prompt("what language would you like to use?");
+  editor.session.setMode("ace/mode/" + lang.toLowerCase());
 }
 
 function tabchanger(){
@@ -218,6 +219,18 @@ function loadsave(){
   }
 }
 
+function showpreview(lang){
+  if (document.getElementById("preview").style.display === "none"){
+  document.getElementById("preview").style.display="block";
+  document.getElementById("codeeditor").style.display = "none";
+  document.getElementById("previewframe").src=lang;
+
+  } else {
+    document.getElementById("preview").style.display="none";
+    document.getElementById("codeeditor").style.display="block"
+  }
+}
+
 function findandrep(){
   editor.find(prompt("what do you want to replace"), {
     backwards: true,
@@ -257,6 +270,22 @@ document.addEventListener('keydown', function(event) {
     savetocookie()
   } else if (event.altKey && event.key === 'i'){
     loadsave()
-  }
+  } else if (event.ctrlKey && event.key === 'r'){
+    localStorage.setItem("torun", editor.getValue())
+    showpreview(lang+".html")
+  } 
 
 });
+
+function tester(){
+  if (lang.toLowerCase()=="javascript"){
+    localStorage.setItem("torun", editor.getValue())
+    showpreview("js.html")
+  } else if (lang.toLowerCase()=="css"){
+    localStorage.setItem("torun", editor.getValue())
+    showpreview("css.html")
+  } else if (lang.toLowerCase()=="html"){
+    localStorage.setItem("torun", editor.getValue())
+    showpreview("html.html")
+  }
+}

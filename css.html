@@ -1,0 +1,59 @@
+<head>
+	<title>Test your code</title>
+</head>
+<body>
+	<style id="code"></style>
+	<h1>Welcome to your CSS tester!</h1>
+	<h2>Click on the buttons to reveal different elements (might wanna make buttons have display:block so they aren't all in one line)</h2>
+	<button onclick="dropdown('headings')">Headings</button>
+      <div id="headings" style="display:none">
+      <h1>h1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+      </div>
+      <spacer></spacer>
+      <button onclick="dropdown('generic')">Text, links and buttons</button>
+      <div id="generic" style="display:none">
+      <spacer></spacer>
+      <p>p tags, <b>bold tags</b> and <i>italic tags</i></p>
+      <spacer></spacer>
+      <a href="https://sitebetterificator.neocities.org/style.css">a tags</a>
+      <spacer></spacer>
+      <a href="https://sitebetterificator.neocities.org/style.css"><button>buttons</button></a>
+      <spacer></spacer>
+      <code>Code: <br><br> print("hello world!")</code>
+      </div>
+      <spacer></spacer>
+      <button onclick="dropdown('spacers')">Different kinds of spacers</button>
+      <div id="spacers" style="display:none">
+      <spacer></spacer>
+      <h3>spacers (create a spacer tag in your CSS to make this)</h3>
+      <spacer></spacer>
+      <p>this is what the gap looks like here</p>
+      <spacer></spacer>
+      <h3>mini spacers (create a minispacer tag in your CSS to make this)</h3>
+      <minispacer></minispacer>
+      <p>this is what the gap looks like here</p>
+      </div>
+      <spacer></spacer>
+      <button onclick="dropdown('input')">inputs</button>
+      <div id="input" style="display:none">
+      <spacer></spacer>
+      <input type="text" placeholder="this is an example input">
+      </div>
+      <minispacer></minispacer>
+    <script>
+    function dropdown(div) {
+    var element = document.getElementById(div);
+    if (element.style.display === "none") {
+    element.style.display = "block";
+    } else {
+    element.style.display = "none";
+    }
+    }
+    </script>
+	<script src="csstester.js"></script>
+</body>
