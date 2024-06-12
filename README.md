@@ -1,5 +1,9 @@
 # Code Tester
-A premade code tester library for the web, currently has : HTML, CSS and JS (with very experimental console support)
+A premade code tester library for the web, currently has : 
+* HTML (with CSS and JS support)
+* CSS (test your css styling)
+* JS (with experimental console)
+  
 ## Advantages
 * 🚀 Blazing fast
 * :accessibility: Simple
