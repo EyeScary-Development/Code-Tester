@@ -2,7 +2,7 @@
 A premade code tester library for the web, currently has : 
 * HTML (with CSS and JS support)
 * CSS (test your css styling)
-* JS (with experimental console)
+* JS (with experimental console that is output only (and making UIs with JS can be weird))
   
 ## Advantages
 * 🚀 Blazing fast
